@@ -271,14 +271,14 @@ const PoolListBody = (
             <td><a href={(A.href = pool.url, `${A.protocol || 'http'}//${A.hostname}`)} target="_new">{A.hostname}</a></td>
             <td className={{'possible-fork': pool.stats && Math.abs(heightData.last - pool.stats.liveStats.network.height) > 5}}>{pool.stats ? pool.stats.liveStats.network.height : undefined}</td>
             <td>{pool.stats ? pool.stats.liveStats.network.difficulty : undefined}</td>
-            <td>{pool.stats ? pool.stats.liveStats.pool.hashrate : undefined}</td>
+            <td>{pool.stats ? pool.stats.liveStats.pool.hashrate.toFixed(0) : undefined}</td>
             <td>{pool.stats ? (pool.stats.liveStats.pool.hashrate / knownNetworkRate * 100).toFixed(1) : undefined}</td>
             <td>{pool.stats ? pool.stats.liveStats.pool.totalBlocks : undefined}</td>
             <td>{pool.stats ? pool.stats.liveStats.pool.totalBlocks - pool.stats.firstSeenBlockCount : undefined}</td>
             <td>{pool.stats && pool.stats.liveStats.pool.totalBlocks - pool.stats.firstSeenBlockCount > 0 ? ((new Date().getTime() - startTime) / (pool.stats.liveStats.pool.totalBlocks - pool.stats.firstSeenBlockCount) / 1000).toFixed(1) : undefined}</td>
           </tr>
         ))
-        .concat(showSummary ? [<tr><td></td><td></td><td></td><td></td><td>{knownNetworkRate}</td><td></td><td>{totalBlocks}</td><td>{totalNewBlocks}</td></tr>] : [])}
+        .concat(showSummary ? [<tr><td></td><td></td><td></td><td></td><td>{knownNetworkRate.toFixed(0)}</td><td></td><td>{totalBlocks}</td><td>{totalNewBlocks}</td></tr>] : [])}
   </tbody>
 );
 
