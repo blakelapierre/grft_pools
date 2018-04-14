@@ -123,7 +123,7 @@ const View = (Component) => ({started, ...props}, {mutation}) => (
 const Pools = ({pools, poolsStats}, {mutation}) => (
   <pools>
     <Network pools={pools} />
-    <donate>Donate to: Pv7ydx95p4Y11ZQaZGKMxGgrSQ9bLCarCGfdYxxDNawJacZrmFQZWQUaQmxADnDg6PjFYc5xd44LJQBroUqiJba72nUUFnudx</donate>
+    <donate>Donate to: </donate>
   </pools>
 );
 
